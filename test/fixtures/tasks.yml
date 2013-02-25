@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  kind: 1
+  by_whom: MyString
+  description: MyText
+  bdd: MyText
+  finished_by: 2013-02-24
+  status: 1
+
+two:
+  kind: 1
+  by_whom: MyString
+  description: MyText
+  bdd: MyText
+  finished_by: 2013-02-24
+  status: 1

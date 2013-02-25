@@ -1,0 +1,52 @@
+<%= form_for @task, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :title, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :title, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :kind, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select(:kind, [['Developmental task', '1'], ['Other task', '2']], :prompt => 'Specify type task')  %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :by_whom, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select(:by_whom, User.find(:all), :id, :user_name) %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :finished_by, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :finished_by, :class => 'date_select', :order => [:day, :month, :year] %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :description, :class => 'text_area' %>
+    </div>
+  </div>
+  <% if @task.kind == 1 %>
+    <div class="control-group">
+      <%= f.label :bdd, "Specs", :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :bdd, :class =>'text_area' %>
+      </div>
+    </div>
+  <% end %>
+  <div class="control-group">
+    <%= f.label :status, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select(:status, [['In progress', '1'], ['Finished', '2']]) %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                tasks_path, :class => 'btn' %>
+  </div>
+<% end %>

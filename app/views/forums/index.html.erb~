@@ -1,0 +1,23 @@
+<%- model_class = Forum -%>
+  <div class="container">
+    <div class="row">
+      <div class="span6">
+        <blockquote class="pull-right">
+          <p>“An idea that is not dangerous is unworthy of being called an idea at all.” </p>
+          <small>Oscar Wilde - <cite title="Source Title"><%= link_to 'Goodreads.com', "http://www.goodreads.com/quotes/tag/ideas?auto_login_attempted=true", "target" => "_blank" %></cite></small>
+        </blockquote>
+      <%= link_to t('.new', :default => t("helpers.links.new")),
+            new_forum_path,
+            :class => 'btn btn-primary' %><hr />
+      <% @forums.each do |post| %>
+        <h3><%= link_to post.title, post, :style => "color: navy;" %></h3>
+        <p><%= truncate(post.body, :length => 125) %></p>
+      <% end %>
+      </div>
+      <div class="span6">
+        <blockquote>
+          <p>“To avoid criticism say nothing, do nothing, be nothing.” </p>
+          <small>Aristotle - <cite title="Source Title"><%= link_to 'Goodreads.com', "http://www.goodreads.com/quotes/tag/criticism", "target" => "_blank" %></cite></small>
+        </blockquote>
+    </div>
+  </div>

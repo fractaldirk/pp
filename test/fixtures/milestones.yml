@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  finished_by: 2013-02-24
+  by_whom: MyString
+  description: MyText
+  deliverable: MyString
+  extern_link: MyString
+
+two:
+  finished_by: 2013-02-24
+  by_whom: MyString
+  description: MyText
+  deliverable: MyString
+  extern_link: MyString

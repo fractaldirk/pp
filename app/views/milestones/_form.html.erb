@@ -1,0 +1,45 @@
+<%= form_for @milestone, :html => { :class => 'form-horizontal' } do |f| %>
+
+  <div class="control-group">
+    <%= f.label :deliverable, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :deliverable, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :finished_by, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :finished_by, :class => 'date_select', :order => [:day, :month, :year] %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :by_whom, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select(:by_whom, User.find(:all), :id, :user_name, :prompt => "Select deliverer") %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :description, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :extern_link, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :extern_link, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :status, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select(:status, [['In progress', '1'], ['Finished', '2']]) %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                milestones_path, :class => 'btn' %>
+  </div>
+<% end %>
