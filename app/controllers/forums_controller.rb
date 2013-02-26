@@ -47,6 +47,7 @@ class ForumsController < ApplicationController
       if @forum.save
         format.html { redirect_to @forum, notice: 'Forum was successfully created.' }
         format.json { render json: @forum, status: :created, location: @forum }
+        UserMailer.post_confirmation(@forum).deliver
       else
         format.html { render action: "new" }
         format.json { render json: @forum.errors, status: :unprocessable_entity }

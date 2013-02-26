@@ -21,6 +21,6 @@ class Task < ActiveRecord::Base
   end
 
   def by_whom_output
-      User.find(:all, :conditions => {:id => by_whom}).map(&:user_name)
+    User.find(:all, :conditions => {:id => by_whom}).map(&:user_name)
   end
 end
