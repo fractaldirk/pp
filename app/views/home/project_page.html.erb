@@ -1,1 +1,2 @@
 <h1>Work in progress</h1>
+<p>Participants: <%= User.order(:id).map(&:user_name).join(", ") %></p>
