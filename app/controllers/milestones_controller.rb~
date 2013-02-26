@@ -2,7 +2,8 @@ class MilestonesController < ApplicationController
   # GET /milestones
   # GET /milestones.json
   def index
-    @milestones = Milestone.all
+    @upcoming_milestones = Milestone.find(:all, :order => "finished_by ASC", :conditions => {:status => '1'})
+    @completed_milestones = Milestone.find(:all, :order => "finished_by DESC", :conditions => {:status => '2'})
 
     respond_to do |format|
       format.html # index.html.erb
