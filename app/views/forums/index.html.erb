@@ -20,5 +20,11 @@
           <p>“To avoid criticism say nothing, do nothing, be nothing.” </p>
           <small>Aristotle - <cite title="Source Title"><%= link_to 'Goodreads.com', "http://www.goodreads.com/quotes/tag/criticism", "target" => "_blank" %></cite></small>
         </blockquote>
+      <hr />
+       <% @comments.each do |comment| %>
+        <strong><%= link_to comment.post_title, comment.post_link %> :</strong><em><%= comment.activity %></em><br/>
+        <%= truncate(comment.body, :length => 222) %><br/>
+        <hr />
+       <% end %>
     </div>
   </div>

@@ -3,6 +3,7 @@ class ForumsController < ApplicationController
   # GET /forums.json
   def index
     @forums = Forum.find(:all, :order => "created_at DESC")
+    @comments = Comment.find(:all, :order => "created_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb

@@ -1,0 +1,9 @@
+<p>
+  <strong><%= comment.commenter %> commented:</strong> <%= simple_format comment.body %>
+</p>
+<p>
+  <%= link_to 'Delete', [comment.forum, comment],
+               :confirm => 'Are you sure?',
+               :method => :delete %>
+</p>
+<hr />

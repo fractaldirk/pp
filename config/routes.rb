@@ -2,8 +2,11 @@ Projectmgmt::Application.routes.draw do
   devise_for :users
 
   get "home/index"
+  get "home/project-page" => 'home#project_page'
 
-  resources :forums
+  resources :forums do
+    resources :comments
+  end
 
   resources :tasks
 

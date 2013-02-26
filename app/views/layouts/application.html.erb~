@@ -15,13 +15,14 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <%= link_to 'Home', home_index_path, :class => "brand" %>
+        <%= link_to 'Home', home_index_path, :class => "brand icon-home icon-white" %>
         <div class="nav-collapse">
           <ul class="nav">
+            <li><%= link_to "Project Description", "/home/project-page" %></li>
+            <li><%= link_to "Posts", forums_path %></li>
             <li><%= link_to "Tasks", tasks_path %></li>
-            <li><%= link_to "Forum", forums_path %></li>
             <li><%= link_to "Milestones", milestones_path %></li>
-            <li><%= link_to "Project Description" %></li>
+            <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
           </ul>
         </div>
       </div>

@@ -1,0 +1,11 @@
+<%= form_for([@forum, @forum.comments.build]) do |f| %>
+  <div class="field">
+    <%= f.text_area :body, :class => 'text_area' %><br/>
+    <%= f.hidden_field :commenter, :value => current_user.user_name %>
+    <%= f.hidden_field :post_title, :value => @forum.title %>
+    <%= f.hidden_field :post_link, :value => forum_path %>
+  </div>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+  </div>
+<% end %>

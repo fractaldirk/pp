@@ -21,6 +21,8 @@
   width: 275px;
 }
 
-h1 {
-  color: navy;
+.signin {
+  background-image:url("IceFlag.jpg");
+  background-repeat:no-repeat;
+  background-position: center;
 }

@@ -1,0 +1,5 @@
+module ForumsHelper
+  def activity
+    "pizza"
+  end
+end
