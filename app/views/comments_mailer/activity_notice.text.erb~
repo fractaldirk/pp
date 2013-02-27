@@ -1,0 +1,3 @@
+CommentsMailer#activity_notice
+
+<%= @greeting %>, find me in app/views/app/views/comments_mailer/activity_notice.text.erb

@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   def create
     @forum = Forum.find(params[:forum_id])
     @comment = @forum.comments.create(params[:comment])
+    CommentsMailer.activity_notice(@forum).deliver
     redirect_to forum_path(@forum)
   end
 

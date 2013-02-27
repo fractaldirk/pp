@@ -9,6 +9,6 @@ class UserMailer < ActionMailer::Base
   def post_confirmation(forum)
   @forum = forum
 
-  mail to: User.order(:id).map(&:email).join(", "), subject: "Activity log Blue Robin project"
+  mail to: User.order(:id).map(&:email).join(", "), subject: "Blue Robin activity log: new post created"
   end
 end
