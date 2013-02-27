@@ -1,13 +1,10 @@
 Hi there!
 
 I just wanted to let you know that a new post has been created by <%= @forum.poster %>.
-It is called: <%= @forum.title %> and can be found here: <%= forum_url(@forum, host: "bluerobinproject2.herokuapp.com") %>/.
+It is called: <%= @forum.title %> and can be found here: <%= forum_url(@forum, host: "personaldj.herokuapp.com") %>/.
 
 Enjoy your day!
 
 Kindest regards,
 
-The Blue Robin team.
-(Blue Robin is an IceFlag initiative)
-
---This is message is generated automatically--
+The IceFlag robot

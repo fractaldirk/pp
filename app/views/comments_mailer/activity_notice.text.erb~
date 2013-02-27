@@ -1,12 +1,9 @@
 Hi there!
 
-A new comment has been shared on the post: <%= @forum.title %> and can be found here: <%= forum_url(@forum, host: "bluerobinproject2.herokuapp.com") %>/.
+A new comment has been shared on the post: <%= @forum.title %> and can be found here: <%= forum_url(@forum, host: "personaldj.herokuapp.com") %>/.
 
 Enjoy your day!
 
 Kindest regards,
 
-The Blue Robin team.
-(Blue Robin is an IceFlag initiative)
-
---This is message is generated automatically--
+The IceFlag robot.
