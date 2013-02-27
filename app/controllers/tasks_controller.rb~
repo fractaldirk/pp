@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  before_filter :authenticate_user!
   # GET /tasks
   # GET /tasks.json
   def index
@@ -26,6 +27,7 @@ class TasksController < ApplicationController
   # GET /tasks/new.json
   def new
     @task = Task.new
+    1.times { @task.critereas.build }
 
     respond_to do |format|
       format.html # new.html.erb

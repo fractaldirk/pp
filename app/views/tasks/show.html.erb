@@ -14,16 +14,27 @@
   <h1><%= @task.title %></h1>
 </div>
 
-  <p>Deliverer: <strong><%= @task.by_whom_output %></strong></p>
-  <p>Finished by: <strong><%= @task.finished_by.strftime("%d %B %Y") unless @task.finished_by.nil? %></strong></p>
+  <p>Deliverer: <em><%= @task.by_whom_output %></em></p>
+  <p>Finished by: <%= @task.finished_by.strftime("%d %B %Y") unless @task.finished_by.nil? %></p>
   <p>Status: <%= @task.status_output %></p>
+  <p>Project goal: <strong><%= @task.goal %></strong></p>
   <% if @task.description.present? %>
     <hr />
     <p>Description:</p>
-    <p><%= simple_format @task.description %></p>
+    <p><%= simple_format @task.description %></p><hr />
+  <% end %>
+  <% if @task.critereas.present? %>
+    <p>List of criterea:</p>
+    <% for criterea in @task.critereas %>
+      <ul class="list">
+        <li><%= criterea.body %></li>
+      </ul>
+    <% end %><hr />
   <% end %>
   <% if @task.kind == 1 && @task.bdd.present? %>
     <hr />
     <p>Test spec:</p>
     <p><%= simple_format @task.bdd %></p>
   <% end %>
+  <br/>
+  <br/>

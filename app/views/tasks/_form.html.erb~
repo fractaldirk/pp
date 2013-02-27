@@ -14,7 +14,7 @@
   <div class="control-group">
     <%= f.label :by_whom, :class => 'control-label' %>
     <div class="controls">
-      <%= f.collection_select(:by_whom, User.find(:all), :user_name, :user_role) %>
+      <%= f.collection_select(:by_whom, User.find(:all), :id, :user_name) %>
     </div>
   </div>
   <div class="control-group">
@@ -24,11 +24,33 @@
     </div>
   </div>
   <div class="control-group">
+    <%= f.label :goal, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :goal, :class => 'text_field', :placeholder => "What's the goal of this task?" %>
+    </div>
+  </div>
+  <div class="control-group">
     <%= f.label :description, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_area :description, :class => 'text_area' %>
     </div>
   </div>
+
+  <p><strong><em>List critereas:</em></strong></p>
+  <%= f.fields_for :critereas do |builder| %>
+  <div class="control-group">
+    <fieldset>
+    <%= builder.label :body, 'Criterea', :class => 'control-label' %>
+    <div class="controls">
+    <%= builder.text_field :body, :class => 'text_field', :placeholder => 'Define a criterea..' %>
+    <%= builder.hidden_field :_destroy %>
+    <%= link_to "remove", '#', class: "remove_fields" %>
+    </div><br/>
+    </fieldset>
+    <%= link_to_add_fields "Add Criterea", f, :critereas %>
+  </div>
+  <% end %>
+
   <% if @task.kind == 1 %>
     <div class="control-group">
       <%= f.label :bdd, "Specs", :class => 'control-label' %>

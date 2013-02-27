@@ -1,5 +1,8 @@
 class Task < ActiveRecord::Base
-  attr_accessible :bdd, :by_whom, :description, :finished_by, :kind, :status, :title
+  attr_accessible :bdd, :by_whom, :description, :finished_by, :kind, :status, :title, :goal,
+                  :critereas_attributes
+  has_many :critereas
+  accepts_nested_attributes_for :critereas
 
   def status_output
     if status == 1
@@ -21,6 +24,6 @@ class Task < ActiveRecord::Base
   end
 
   def by_whom_output
-    User.find(:all, :conditions => {:id => by_whom}).map(&:user_name)
+    User.find(:all, :conditions => {:id => by_whom}).map(&:user_name).join(" ")
   end
 end

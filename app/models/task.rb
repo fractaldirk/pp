@@ -1,5 +1,8 @@
 class Task < ActiveRecord::Base
-  attr_accessible :bdd, :by_whom, :description, :finished_by, :kind, :status, :title
+  attr_accessible :bdd, :by_whom, :description, :finished_by, :kind, :status, :title, :goal,
+                  :critereas_attributes
+  has_many :critereas
+  accepts_nested_attributes_for :critereas, allow_destroy: true
 
   def status_output
     if status == 1
