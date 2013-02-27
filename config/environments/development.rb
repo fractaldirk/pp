@@ -23,8 +23,8 @@ Projectmgmt::Application.configure do
     port: 587,
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: "bluerobinproject@gmail.com",
-    password: "2create4u&me2"
+    user_name: "dirkgrandjean@gmail.com",
+    password: "Banned88"
   }
 
   # Print deprecation notices to the Rails logger

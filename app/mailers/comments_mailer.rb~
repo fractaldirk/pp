@@ -1,12 +1,12 @@
 class CommentsMailer < ActionMailer::Base
-  default from: "bluerobinproject@gmail.com"
+  default from: "dirkgrandjean@gmail.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
   #   en.comments_mailer.activity_notice.subject
   #
-  def activity_notice
+  def activity_notice(forum)
     @forum = forum
 
     mail to: User.order(:id).map(&:email).join(", "), subject: "Blue Robin activity log: new comment"
