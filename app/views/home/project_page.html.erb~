@@ -1,1 +1,41 @@
-<h1>Work in progress</h1>
+<h1>App details - Agreements - Plans</h1>
+<p>Participants: <%= User.order(:id).map(&:user_name).join(", ") %></p>
+<br/>
+<h3>Application details (testing phase)</h3>
+<p>
+  <table class="table">
+    <tr>
+      <th>Name</th>
+      <th>Link</th>
+      <th>Type user</th>
+      <th>Type device</th>
+    </tr>
+    <tr>
+      <td>User login</td>
+      <td><%= link_to 'User page', "http://personaldj2.herokuapp.com/", "target" => "_blank" %></td>
+      <td>Club visitor</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Club page</td>
+      <td><%= link_to 'Live Dashboard', "http://personaldj2.herokuapp.com/home/dashboard/", "target" => "_blank" %></td>
+      <td>Club (Screen/TV)</td>
+      <td>PC/Tablet(Web Browser)</td>
+    </tr>
+    <tr>
+      <td>Songs Management</td>
+      <td><%= link_to 'DJ page', "http://personaldj2.herokuapp.com/songs/gettrack/", "target" => "_blank" %></td>
+      <td>DJ</td>
+      <td>Tablet/Mobile Device</td>
+    </tr>
+  </table>
+  <em>Output will be on mobile devices. No styling applies if using a PC while surfing to a mobile site. Functional testing can still be done though without proper stylesheet & interface.</em>
+</p>
+<h3>Next steps</h3>
+<p>
+  <ul>
+    <li>Internal testing</li>
+    <li>Marketing Plan</li>
+    <li>Personal DJ site</li>
+  </ul>
+</p>
